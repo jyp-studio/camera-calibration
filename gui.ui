@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1270</width>
+    <height>433</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>2022 OpenCvDl Hw2 </string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QGroupBox" name="groupLoad">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>30</y>
+      <width>231</width>
+      <height>311</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Load Date</string>
+    </property>
+    <widget class="QPushButton" name="loadFolder">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>60</y>
+       <width>211</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Load Folder</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="loadImageL">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>140</y>
+       <width>211</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Load Image_L</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="loadImageR">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>220</y>
+       <width>211</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Load Image_R</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelLoadFolder">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>90</y>
+       <width>191</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>No folder loaded</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelLoadImageL">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>170</y>
+       <width>191</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>No image loaded</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelLoadImageR">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>250</y>
+       <width>191</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>No image loaded</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupFindContour">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>30</y>
+      <width>231</width>
+      <height>311</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>1. Find Contour</string>
+    </property>
+    <widget class="QPushButton" name="btn1_1">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>90</y>
+       <width>211</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>1.1 Draw Contour</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn1_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>170</y>
+       <width>211</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>1.2 Count Rings</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelCountRings2">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>220</y>
+       <width>191</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>There are ___ rings in img2.jpg</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelCountRings1">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>200</y>
+       <width>191</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>There are ___ rings in img1.jpg</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupCalibration">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>30</y>
+      <width>231</width>
+      <height>311</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>2. Calibration</string>
+    </property>
+    <widget class="QPushButton" name="btn2_1">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>211</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>2.1 Find Corners</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn2_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>70</y>
+       <width>211</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>2.2 Find Intrinsic</string>
+     </property>
+    </widget>
+    <widget class="QGroupBox" name="groupFindExtrinsic">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>110</y>
+       <width>211</width>
+       <height>101</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>2.3 Find Extrinsic</string>
+     </property>
+     <widget class="QPushButton" name="btn2_3">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>60</y>
+        <width>211</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>2.3  Find Extrinsic</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="comboBoxFindExtrinsic">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>30</y>
+        <width>171</width>
+        <height>26</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QPushButton" name="btn2_4">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>220</y>
+       <width>211</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>2.4 Find Distortion</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn2_5">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>260</y>
+       <width>211</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>2.5 Show Result</string>
+     </property>
+    </widget>
+    <zorder>groupFindExtrinsic</zorder>
+    <zorder>btn2_1</zorder>
+    <zorder>btn2_2</zorder>
+    <zorder>btn2_4</zorder>
+    <zorder>btn2_5</zorder>
+   </widget>
+   <widget class="QGroupBox" name="groupAR">
+    <property name="geometry">
+     <rect>
+      <x>770</x>
+      <y>30</y>
+      <width>231</width>
+      <height>311</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>3. Augmented Reality</string>
+    </property>
+    <widget class="QPushButton" name="btn3_1">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>140</y>
+       <width>211</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>3.1 Show Words on Board</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn3_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>220</y>
+       <width>211</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>3.2 Show Words Vertically</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEditAR">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>70</y>
+       <width>191</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupStereoDisparityMap">
+    <property name="geometry">
+     <rect>
+      <x>1020</x>
+      <y>30</y>
+      <width>231</width>
+      <height>311</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>4. Stereo Disparity Map</string>
+    </property>
+    <widget class="QPushButton" name="btn4_1">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>140</y>
+       <width>211</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>4.1 Stereo Disparity Map</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1270</width>
+     <height>37</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
