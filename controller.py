@@ -7,6 +7,7 @@ import os
 
 from components.draw_contour import draw_contour
 from components.calibration import *
+from components.stereo_map import *
 
 
 class Controller(QtWidgets.QMainWindow):
@@ -60,10 +61,10 @@ class Controller(QtWidgets.QMainWindow):
 
     def btn_1_2(self):
         self.ui.labelCountRings1.setText(
-            f"There are {self.rings[0]:2} rings in img1.jpg"
+            f"There are {self.rings[1]:2} rings in img1.jpg"
         )
         self.ui.labelCountRings2.setText(
-            f"There are {self.rings[1]:2} rings in img2.jpg"
+            f"There are {self.rings[0]:2} rings in img2.jpg"
         )
 
     def btn_2_1(self):
@@ -135,4 +136,13 @@ class Controller(QtWidgets.QMainWindow):
         self.model.imshow(results, "show on board", 1)
 
     def btn_4_1(self):
-        pass
+        mapper = SteroDisparityMap(self.path_L, self.path_R)
+        mapper.find_disarity()
+        disp_norm = mapper.normalize()
+        mapper.imshow("disparity", disp_norm)
+        mapper.wait()
+
+        mapper.imshow("imgL", mapper.imgL)
+        mapper.imshow("imgR_dot", mapper.imgR)
+        mapper.mouseTracking()
+        mapper.wait()

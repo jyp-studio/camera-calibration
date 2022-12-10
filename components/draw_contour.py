@@ -6,8 +6,9 @@ def draw_contour(path: str) -> cv2.Mat:
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     blur = cv2.GaussianBlur(gray, (11, 11), 0)
     binary_img = cv2.Canny(blur, 20, 160)
-    contours, hierarchy = cv2.findContours(binary_img.copy(), cv2.RETR_LIST,
-                                           cv2.CHAIN_APPROX_SIMPLE)
+    contours, hierarchy = cv2.findContours(
+        binary_img.copy(), cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE
+    )
     # cv2.imshow("gray", gray)
     # cv2.imshow("blur", blur)
     # cv2.imshow("binary", binary_img)
@@ -18,7 +19,7 @@ def draw_contour(path: str) -> cv2.Mat:
 
 
 if __name__ == "__main__":
-    path = "./Dataset_OpenCvDl_Hw2/Q1_Image/img2.jpg"
+    path = "./Dataset_OpenCvDl_Hw2/Q1_Image/img1.jpg"
     rings, result = draw_contour(path=path)
     cv2.imshow(f"contours1 {rings}", result)
     cv2.waitKey(0)
